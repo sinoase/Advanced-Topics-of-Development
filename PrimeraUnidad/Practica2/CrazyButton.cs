@@ -13,7 +13,7 @@ namespace Practica2
 
         public void Init(int width, int height)
         {
-            SetBounds((width / 2) - 50, (height / 2) - 40, 100, 50);
+           SetBounds((width / 2) - 50, (height / 2) - 40,100,50); 
             Visible = true;
             Text = "Hola";
             Speed = 1;
@@ -35,7 +35,7 @@ namespace Practica2
 
                 Speed = new Random().Next(0, 2);
 
-                if (Speed == 0) distancia = r.Next(150, 400);
+                if (Speed == 0) distancia = r.Next(150, 1000);
                 else distancia = r.Next(30, 100);
                 Direcciones dir = (Direcciones)r.Next(0, 8);
 

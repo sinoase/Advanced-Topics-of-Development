@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Threading;
-using _1_Button;
+
 
 
 namespace ConsoleApplication
@@ -9,36 +9,35 @@ namespace ConsoleApplication
 
     class Program
     {
-        Form form1;
-        public CrazyButton but;
         static void Main(string[] args)
         {
-            Program p = new Program();
-            Thread t1 = new Thread(p.CreateForm);
-            t1.Start();
-            Thread.Sleep(500);
-            /////////////////
-            p.but.Go();
-        }
+            Form1 form1 = new Form1();
 
-        void CreateForm()
-        {
-
-
-            form1 = new Form();
-            form1.SetBounds(500, 500, 600, 400);
-
-            but = new CrazyButton();
-            but.Init(form1.Width, form1.Height);
-            but.MouseHover += But_MouseHover;
-
-            form1.Controls.Add(but);
-
-            Application.EnableVisualStyles();//Hace que se vea más chido
+            form1.Init();
+            Application.EnableVisualStyles();
             Application.Run(form1);
+
         }
-        void But_MouseHover(object sender, EventArgs e) => but.Teletransportación();
+        class Form1 : Form
+        {
+            private Button but;
+            public void Init()
+            {
+                SetBounds(500, 500, 400, 200);
+                but = new Button();
+                but.SetBounds(135, 50, 100, 50);
+                but.Visible = true;
+                but.Text = "GitHub";
+                but.Click += butClicked;
+                Controls.Add(but);
+                Visible = true;
+            }
+            public void butClicked(object sender, EventArgs e)
+            {
+                Console.WriteLine("Hola panas");
+                System.Diagnostics.Process.Start("https://github.com/sinoase");
+            }
+        }
+    }
 
     }
-    
-}
