@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-
 using System.Threading;
 using System.Drawing;
-namespace Practica2
+namespace Practica3
 {
     class CrazyButton : Button
     {
@@ -14,11 +13,11 @@ namespace Practica2
 
         public void Init(int width, int height)
         {
-           SetBounds((width / 2) - 50, (height / 2) - 40,100,50); 
+            SetBounds((width / 2) - 50, (height / 2) - 40, 100, 50);
             Visible = true;
             Text = "Hola";
             Speed = 1;
-            
+
             LimiteDerecha = width - 115;
             LimiteIzquierda = 0;
             LimiteArriba = 0;
