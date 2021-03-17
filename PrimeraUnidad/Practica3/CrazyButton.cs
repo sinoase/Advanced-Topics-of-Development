@@ -26,7 +26,7 @@ namespace Practica3
 
         }
         bool HuboChoque() => Bounds.X > LimiteDerecha || Bounds.X < LimiteIzquierda || Bounds.Y < LimiteArriba || Bounds.Y > LimiteAbajo;
-
+/*
         public void Go()
         {
             while (true)
@@ -88,7 +88,7 @@ namespace Practica3
                     SetBounds(Bounds.X, Bounds.Y - 1, Width, Height);
 
             }
-        }
+        }*/
         public void Teletransportación()
         {
             int x = r.Next(LimiteIzquierda, LimiteDerecha);
