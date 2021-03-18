@@ -32,6 +32,7 @@ namespace Practica2
         {
             while (true)
             {
+                
                 int distancia;
 
                 Speed = new Random().Next(0, 2);

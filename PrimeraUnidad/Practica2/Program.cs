@@ -12,10 +12,13 @@ namespace Practica2
         static void Main(string[] args)
         {
             Program p = new Program();
+            
             Thread t1 = new Thread(p.CreateForm);
             t1.Start();
             Thread.Sleep(500);
             /////////////////
+
+
             p.but.Go();
         }
 

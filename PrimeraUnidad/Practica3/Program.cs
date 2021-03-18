@@ -77,6 +77,7 @@ namespace Practica3
 
             Application.EnableVisualStyles();//Hace que se vea más chido
             Application.Run(form1);
+           
         }
 
 
