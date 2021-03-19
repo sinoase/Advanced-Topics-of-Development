@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PracticaFinal
+namespace Practica4
 {
     public partial class Form1 : Form
     {
@@ -16,12 +16,5 @@ namespace PracticaFinal
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
