@@ -1,7 +1,5 @@
 ﻿
-using System;
-
-namespace Practica4
+namespace Practica4Final
 {
     partial class Form1
     {

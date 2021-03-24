@@ -11,7 +11,7 @@ namespace Practica2
         int LimiteArriba, LimiteAbajo;
         public int Speed;
         Random r = new Random();
-
+        
         public void Init(int width, int height)
         {
            SetBounds((width / 2) - 50, (height / 2) - 40,100,50); 

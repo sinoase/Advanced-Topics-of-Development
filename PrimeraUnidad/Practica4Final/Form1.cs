@@ -6,10 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
 
-namespace Practica4
+namespace Practica4Final
 {
     public partial class Form1 : Form
     {
@@ -18,7 +17,10 @@ namespace Practica4
         int LimiteIzquierda;
         int LimiteArriba;
         int LimiteAbajo;
-        int SizeButton;
+        int HeightButton;
+        int WidthButton;
+
+    
 
         bool started = false;
         Random GRandom;
@@ -31,39 +33,44 @@ namespace Practica4
             timer = new Timer();
             timer.Tick += Form1_TimerTick;
             timer.Start();
-            ClientSize = new Size(600, 400);
             CButtons = new Dictionary<int, CrazyButton>();
            
-
-            DefinirLimites();
-            
-
-
         }
 
-      
-    
+
+
         void AgregarComponentesIniciales()
         {
-           CButtons.Add(0,new Practica4.CrazyButton(TypeB.Impar));
-           CButtons.Add(1, new Practica4.CrazyButton(TypeB.Impar));
-           CButtons.Add(2, new Practica4.CrazyButton(TypeB.Par));
-           CButtons.Add(3, new Practica4.CrazyButton(TypeB.Par));
+            CButtons.Add(0, new CrazyButton(TypeB.Impar));
+            System.Threading.Thread.Sleep(10);
 
-           for (int i = 0; i < 4; i++) Controls.Add(CButtons[i]);
+            CButtons.Add(1, new CrazyButton(TypeB.Impar));
+            System.Threading.Thread.Sleep(10);
+
+            CButtons.Add(2, new CrazyButton(TypeB.Par));
+            System.Threading.Thread.Sleep(10);
+
+            CButtons.Add(3, new CrazyButton(TypeB.Par));
+
+            for (int i = 0; i < 4; i++)
+                Controls.Add(CButtons[i]);
+                
+            
+            
 
 
         }
         void DefinirLimites()
         {
-            SizeButton = 20;
-            CrazyButton.LimiteDerecha = LimiteDerecha = ClientSize.Width - SizeButton;
-            Practica4.CrazyButton.LimiteIzquierda= LimiteIzquierda = 0;
+            HeightButton = 20;
+            WidthButton = 30;
+            CrazyButton.LimiteDerecha = LimiteDerecha = ClientSize.Width -WidthButton;
+            CrazyButton.LimiteIzquierda = LimiteIzquierda = 0;
             CrazyButton.LimiteArriba = LimiteArriba = 0;
-            CrazyButton.LimiteAbajo=LimiteAbajo = ClientSize.Height - SizeButton;
+            CrazyButton.LimiteAbajo = LimiteAbajo = ClientSize.Height - HeightButton;
 
         }
-      
+
         private void Form1_TimerTick(Object sender, EventArgs e)
         {
             /////Espera a que  el designer del form inicialice el contenedor de controles/////
@@ -77,13 +84,15 @@ namespace Practica4
 
 
 
-            
+
         }
 
         private void Form1_ResizeEnd(Object sender, EventArgs e)
         {
-            
+            DefinirLimites();
         }
 
+
     }
+    
 }

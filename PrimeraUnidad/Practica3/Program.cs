@@ -143,9 +143,9 @@ namespace Practica3
                     
                     distanciaRecorrida[id] = 0;
                     
-                    if (r.Next(0,2)==0) distancia[id] = r.Next(500, 1000);
-                    else distancia[id] = r.Next(100, 500);
-                    direccion[id] = (Direcciones)r.Next(0, 8);
+                    distancia[id] = r.Next(70, 600);
+                    
+                    direccion[id] = (Direcciones)r.Next(0, 11);
 
 
                 }
@@ -156,29 +156,38 @@ namespace Practica3
                     switch ((int)direccion[id])
                     {
                         case 0:
-                            component.SetBounds(component.Bounds.X, component.Bounds.Y - 1, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X, component.Bounds.Y - 3, component.Width, component.Height);
                             break;
                         case 1:
-                            component.SetBounds(component.Bounds.X + 1, component.Bounds.Y - 1, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X + 3, component.Bounds.Y - 3, component.Width, component.Height);
                             break;
                         case 2:
-                            component.SetBounds(component.Bounds.X + 1, component.Bounds.Y, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X + 3, component.Bounds.Y, component.Width, component.Height);
                             break;
                         case 3:
-                            component.SetBounds(component.Bounds.X + 1, component.Bounds.Y + 1, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X + 3, component.Bounds.Y + 3, component.Width, component.Height);
                             break;
                         case 4:
-                            component.SetBounds(component.Bounds.X, component.Bounds.Y + 1, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X, component.Bounds.Y + 3, component.Width, component.Height);
                             break;
                         case 5:
-                            component.SetBounds(component.Bounds.X - 1, component.Bounds.Y + 1, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X - 3, component.Bounds.Y + 3, component.Width, component.Height);
                             break;
                         case 6:
-                            component.SetBounds(component.Bounds.X - 1, component.Bounds.Y, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X - 3, component.Bounds.Y, component.Width, component.Height);
                             break;
                         case 7:
-                            component.SetBounds(component.Bounds.X - 1, component.Bounds.Y - 1, component.Width, component.Height);
+                            component.SetBounds(component.Bounds.X - 3, component.Bounds.Y - 3, component.Width, component.Height);
                             break;
+                    case 8:
+                        component.SetBounds(component.Bounds.X + 3, component.Bounds.Y, component.Width, component.Height);
+                        break;
+                    case 9:
+                        component.SetBounds(component.Bounds.X + 3, component.Bounds.Y, component.Width, component.Height);
+                        break;
+                    case 10:
+                        component.SetBounds(component.Bounds.X + 3, component.Bounds.Y, component.Width, component.Height);
+                        break;
 
                     }
                     distanciaRecorrida[id]++;
@@ -187,25 +196,25 @@ namespace Practica3
 
                 if (component.Bounds.X >= LimiteDerecha)
                 {
-                    component.SetBounds(component.Bounds.X - 1, component.Bounds.Y, component.Width, component.Height);
+                    component.SetBounds(component.Bounds.X - 3, component.Bounds.Y, component.Width, component.Height);
                     recorridoFinalizado[id] = true;
                     HuboColisionDer = true;
                 }
                 else if (component.Bounds.X <= LimiteIzquierda)
                 {
-                    component.SetBounds(component.Bounds.X + 1, component.Bounds.Y, component.Width, component.Height);
+                    component.SetBounds(component.Bounds.X + 3, component.Bounds.Y, component.Width, component.Height);
                     recorridoFinalizado[id] = true;
                     HuboColisionIzq = true;
                 }
                 else if (component.Bounds.Y <= LimiteArriba)
                 {
-                    component.SetBounds(component.Bounds.X, component.Bounds.Y + 1, component.Width, component.Height);
+                    component.SetBounds(component.Bounds.X, component.Bounds.Y + 3, component.Width, component.Height);
                     recorridoFinalizado[id] = true;
                     HuboColisionArriba = true;
                 }
                 else if (component.Bounds.Y >= LimiteAbajo)
                 {
-                    component.SetBounds(component.Bounds.X, component.Bounds.Y - 1, component.Width, component.Height);
+                    component.SetBounds(component.Bounds.X, component.Bounds.Y - 3, component.Width, component.Height);
                     recorridoFinalizado[id] = true;
                     HuboColisionAbajo = true;
                 }
@@ -432,7 +441,8 @@ namespace Practica3
             Sur = 4,
             Suroeste = 5,
             Oeste = 6,
-            Noroeste = 7
+            Noroeste = 7,
+            Este2,Este3,Este4
 
 
         }
